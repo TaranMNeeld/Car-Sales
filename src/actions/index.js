@@ -1,10 +1,11 @@
 export const REMOVE_FEATURE = 'REMOVE_FEATURE';
 export const BUY_ITEM = 'BUY_ITEM';
 
-export const removeFeature = featureName => {
-    console.log(featureName);
+export const removeFeature = item => {
+    console.log(item);
     return {
-        type: REMOVE_FEATURE
+        type: REMOVE_FEATURE,
+        payload: item
     };
 };
 

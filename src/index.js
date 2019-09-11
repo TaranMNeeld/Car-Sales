@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App, {store} from './App';
+import App from './App';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { reducer } from './reducers';
 
 import 'bulma/css/bulma.css';
 import './styles.scss';
+
+export const store = createStore(reducer);
 
 ReactDOM.render(
     <Provider store={store}>

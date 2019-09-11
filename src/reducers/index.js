@@ -22,12 +22,12 @@ export const reducer = (state = initialState, action) => {
         case REMOVE_FEATURE:
             return {
                 ...state,
-                newFeature: [...state.features, action.payload]
+                features: [...state.features, action.payload]
             };
         case BUY_ITEM:
             return {
                 ...state,
-                newFeature: [...state.features, action.payload]
+                features: [...state.features, action.payload]
             };
         default:
             return state;
