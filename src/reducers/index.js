@@ -21,6 +21,12 @@ export const initialState = {
         }
     ],
     car: {},
+    allFeatures: [
+        { id: 1, name: 'V-6 engine', price: 1500 },
+        { id: 2, name: 'Racing detail package', price: 1500 },
+        { id: 3, name: 'Premium sound system', price: 500 },
+        { id: 4, name: 'Rear spoiler', price: 250 }
+    ],
     store: [
         { id: 1, name: 'V-6 engine', price: 1500 },
         { id: 2, name: 'Racing detail package', price: 1500 },
@@ -30,9 +36,9 @@ export const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
+    console.log(action.type)
     switch (action.type) {
         case REMOVE_FEATURE:
-            console.log(state.store)
             return {
                 ...state,
                 car: {
@@ -43,7 +49,6 @@ export const reducer = (state = initialState, action) => {
                 additionalPrice: state.additionalPrice - action.payload.price
             };
         case BUY_ITEM:
-            console.log(state.store)
             return {
                 ...state,
                 car: {
@@ -56,7 +61,9 @@ export const reducer = (state = initialState, action) => {
         case SELECT_CAR:
             return {
                 ...state,
-                car: action.payload
+                store : [...state.allFeatures],
+                car: action.payload,
+                additionalPrice: 0
             }
         default:
             return state;

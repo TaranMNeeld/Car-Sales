@@ -10,7 +10,7 @@ const App = props => {
   return (
     <div className="boxes">
       <CarSelection/>
-      {props.state.car ? (
+      {props.state.car.name ? (
         <div>
         <div className="box">
         <Header />

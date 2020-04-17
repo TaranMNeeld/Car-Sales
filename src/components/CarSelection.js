@@ -9,7 +9,7 @@ const CarSelection = props => {
     <div className="content">
       <h1>Cars:</h1>
         {props.cars.map(car => (
-        <Car key={`${car.id} + ${car.name}`} car={car} selectCar={selectCar}/>
+        <Car key={`${car.id} + ${car.name}`} car={car} selectCar={props.selectCar}/>
         ))}
     </div>
   );
